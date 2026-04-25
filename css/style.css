@@ -1,1 +1,120 @@
- 
+/* =========================
+   VARIABLES CSS (OBLIGATOIRE)
+========================= */
+:root {
+  --primary: #0d6efd;
+  --secondary: #6c757d;
+  --dark: #212529;
+  --light: #f8f9fa;
+  --accent: #20c997;
+  --text: #333;
+
+  --font-title: 'Poppins', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+
+  --spacing: 20px;
+}
+
+/* =========================
+   RESET CSS
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: var(--light);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  margin-bottom: 15px;
+}
+
+section {
+  padding: 60px 0;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  transition: 0.3s ease;
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  font-family: var(--font-title);
+  font-size: 24px;
+  color: var(--primary) !important;
+}
+
+.nav-link {
+  margin-left: 15px;
+  color: var(--dark) !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+}
+
+/* =========================
+   HERO (IMAGE)
+========================= */
+.hero {
+  height: 100vh;
+  background: url('../images/hero.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* =========================
+   CARTES (BASE)
+========================= */
+.shadow {
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.shadow:hover {
+  transform: translateY(-8px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  font-size: 14px;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
