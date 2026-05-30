@@ -49,6 +49,11 @@ section {
 .navbar {
   transition: 0.3s ease;
   padding: 15px 0;
+  position: ;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar-brand {
@@ -69,27 +74,43 @@ section {
 
 .btn-primary {
   background-color: var(--primary);
-  border: none;
+  border: none ;
 }
 
 .btn-primary:hover {
   background-color: var(--accent);
 }
 
-/* =========================
-   HERO (IMAGE)
-========================= */
-.hero {
-  height: 100vh;
-  background: url('../images/hero.jpg') center/cover no-repeat;
+.hero{
+  min-height: 100vh;
+  background-image: url("../img/hero.jpg");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  overflow: hidden;
   position: relative;
 }
+.hero h1 {
+    font-size: 2.5rem 
+}
+.hero h2 {
+  font-size: 1.1rem;
+}
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
+/* Exemple de code à adapter avec tes propres classes HTML */
+
+.bouton-modifier {
+    background-color: #f1f3f5; /* Un joli gris clair moderne */
+    color: #333333;            /* Couleur du texte sombre pour que ce soit bien lisible */
+    border: none;              /* Enlève la bordure si tu veux un fond plein */
+    
+    /* Pour s'aligner parfaitement sur l'autre bouton : */
+    font-size: 16px;           /* Mets la même taille de police que le bouton sombre */
+    font-weight: 500;          /* Même épaisseur de texte */
+    padding: 12px 24px;        /* Même hauteur (top/bottom) et largeur (left/right) */
+    border-radius: 6px;        /* Même arrondi des angles */
+    cursor: pointer;
+    display: inline-block;
 }
 
 /* =========================
@@ -118,3 +139,343 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+/*infos contact*/
+td:nth-child(2) h3 {
+  margin-bottom: 10px 0;
+  font-size: 15px;
+}
+/*====partie droite====*/
+td:nth-child(2){
+  background:linear-gradient(135deg,#01337c95,#045191);
+  color: white;
+}
+/*carte*/
+iframe{
+  margin-top: 10px;
+  border-radius: 8px;
+  width: 100%;
+  height: 220px;
+  border: none;
+}
+/* =========================
+   HERO AVANCÉ
+========================= */
+
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+  text-align: left; /* asymétrie */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.hero h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+/* =========================
+   BENTO GRID
+========================= */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-8px);
+}
+
+.box1 {
+  grid-column: span 2;
+}
+
+.box4 {
+  grid-column: span 2;
+}
+/* Conteneur principal Bento */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  gap: 1.5rem; /* Espace entre les cartes */
+}
+
+/* Style de base des cartes */
+.bento-card {
+  background-color: var(--light-bg);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Modifications asymétriques pour le Bento */
+@media (min-width: 992px) {
+  .bento-large {
+    grid-column: span 2; /* Occupe 2 colonnes */
+    grid-row: span 1;
+  }
+  .bento-wide {
+    grid-column: span 2; /* Occupe 2 colonnes */
+  }
+}
+
+/* Badge numérique discret */
+.bento-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: bold;
+  opacity: 0.3;
+}
+.category-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s ease, 
+              border-color 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px); /* La carte monte légèrement */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Ombre portée plus douce et large */
+  border-color: var(--primary-color); /* Changement de bordure avec votre variable */
+}
+
+/* --- LE CADRE DES CARTES (Cadrer proprement) --- */
+.category-card {
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0; /* Crée le contour/cadre de la carte */
+    border-radius: 16px;       /* Arrondit les angles pour un effet moderne */
+    padding: 30px 20px;        /* Donne de l'espace à l'intérieur du cadre */
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Ombre légère de base */
+    
+    /* Gère la transition fluide pour les effets au survol */
+    transition: transform 0.3s ease-in-out, 
+                box-shadow 0.3s ease-in-out, 
+                border-color 0.3s ease-in-out;
+}
+
+/* --- LE EFFETS HOVER EXIGÉS PAR LE SUJET --- */
+.category-card:hover {
+    transform: translateY(-8px); /* 1. Transformation (la carte monte) */
+    box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.15); /* 2. Ombre portée prononcée */
+    border-color: #1212a9e0; /* 3. Changement de couleur (la bordure devient verte) */
+}
+
+/* --- STYLE DES ICÔNES --- */
+.icon-box-cat {
+    width: 65px;
+    height: 65px;
+    background-color: rgba(16, 185, 129, 0.1); /* Petit fond vert très clair et transparent */
+    color: #0f1193; /* Couleur de l'icône (Vert AfriTalent) */
+    font-size: 26px; /* Taille de l'icône */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Rend le fond de l'icône parfaitement rond */
+    margin: 0 auto 10px auto; /* Centre l'icône horizontalement */
+    transition: all 0.3s ease;
+}
+
+/* Changement de couleur de l'icône au survol de la carte */
+.category-card:hover .icon-box-cat {
+    background-color: #0b109deb;
+    color: #ffffff;
+}
+
+
+
+
+/* =========================
+   TEMOIGNAGES
+========================= */
+.carousel-item {
+  padding: 40px;
+  background: var(--light);
+  border-radius: 10px;
+}
+
+.carousel-item p {
+  font-style: italic;
+}
+/* Style des avatars de la section témoignages */
+.testimonial-avatar {
+    object-fit: cover; /* Évite de déformer la photo si elle n'est pas parfaitement carrée */
+    border: 3px solid #240e93; /* Ajoute un joli cercle vert autour de la photo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour mettre le texte des citations en italique comme demandé */
+.italic {
+    font-style: italic;
+}
+
+/* Personnalisation légère des indicateurs (petits traits du bas) */
+.carousel-indicators [data-bs-target] {
+    background-color: #1f0d87; /* Transforme les boutons du bas en couleur verte */
+}
+
+/* ==========================================================================
+   SECTION CTA & FOOTER (COULEURS BLEUES - COMMIT 4)
+   ========================================================================== */
+
+/* --- STYLE DE L'APPEL À L'ACTION (CTA) --- */
+.cta-section {
+    background-color: #0d6efd; /* Fond bleu coloré par défaut s'il n'y a pas d'image */
+    background-image: url('../images/bg-cta.jpg'); /* Vous pourrez mettre une image de fond ici */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* L'overlay assombrit l'image de fond pour faire ressortir le texte */
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 25, 44, 0.8); /* Mélange bleu foncé très opaque */
+    z-index: 1;
+}
+
+.z-index-2 {
+    z-index: 2;
+}
+
+/* Animation et style du bouton CTA */
+.btn-cta {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-cta:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+    transform: scale(1.05); /* Effet d'agrandissement discret au survol */
+    box-shadow: 0 10px 20px rgba(7, 3, 69, 0.4);
+}
+
+/* --- STYLE DU FOOTER --- */
+.bg-dark {
+    background-color: #0f172a !important; /* Bleu nuit très sombre ultra moderne */
+}
+
+.text-primary {
+    color: #0d6efd !important; /* Forcer les titres clés en bleu */
+}
+
+/* Effet de survol sur les liens du footer */
+.footer-links a {
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #0d6efd !important; /* Les liens deviennent bleus au survol */
+    padding-left: 4px; /* Léger décalage dynamique vers la droite */
+}
+
+/* Style des icônes de réseaux sociaux */
+.social-icons a {
+    font-size: 18px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #0d6efd !important;
+    transform: translateY(-3px); /* L'icône monte légèrement au survol */
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+  padding-top: 120px;
+}
+
+.location-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-control {
+  padding: 12px;
+}
+.contact-section {
+  padding-top: 200px;
+}
+
+.contact-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: var(--dark);
+}
+.contact-section h1 {
+  text-align: center;
+}
+
+/* ==========================================================================
+   PAGE FREELANCES - NETTOYAGE DES ESPACES
+   ========================================================================== */
+
+.freelance-section h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 15px; /* Réduit drastiquement de 50px à 15px */
+    color: #0a141f;
+}
+
+/* Optimisation du paragraphe pour un rendu aéré et professionnel */
+.freelance-section p {
+    font-size: 1.15rem !important;
+    color: #5a626a !important;
+    font-weight: 400;
+}
+
+/* Style des cartes pour enlever les bordures inutiles et ajouter un bel effet propre */
+.freelance-section .card {
+    transition: transform 0.3s ease;
+}
+
+.freelance-section .card:hover {
+    transform: translateY(-5px); /* Léger effet de survol très pro */
+}
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.hero .container {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
